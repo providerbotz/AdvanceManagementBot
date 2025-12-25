@@ -36,14 +36,14 @@ class Accounts(object):
     API_ID = int(environ.get("API_ID", 0))
     API_HASH = environ.get("API_HASH")
     BOT_TOKEN = environ.get("BOT_TOKEN")
-    BOT_PLUGINS = environ.get("BOT_PLUGINS", "Midukki")
-    BOT_SESSIONS = environ.get("BOT_SESSION", "Midukki-RoboT")
+    BOT_PLUGINS = environ.get("BOT_PLUGINS", "Provider")
+    BOT_SESSIONS = environ.get("BOT_SESSION", "Provider_files")
 
 class Bots(object):
     BOT_ID = int(environ.get("BOT_ID", Accounts.BOT_TOKEN.split(":")[0]))
-    BOT_NAME = None # "Midukki"
-    BOT_MENTION = None # "@Midukki_Robot"
-    BOT_USERNAME = None # "Midukki_Robot"
+    BOT_NAME = None # "ProviderManager"
+    BOT_MENTION = None # "@ProviderManagerBot"
+    BOT_USERNAME = None # "ProvidermanagerBot"
     #bot up time
     BOT_START_TIME = time()
 
