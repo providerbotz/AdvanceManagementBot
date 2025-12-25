@@ -71,14 +71,14 @@ class Configs(object):
 
     # Groups & Channels
     LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
-    SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/Mo_Tech_YT')
+    SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/ProviderBotx')
     CHANNELS = [int(ch) if find.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
     FORCE_SUB = environ.get('FORCE_SUB')
     AUTH_CHANNEL = int(FORCE_SUB) if FORCE_SUB and find.search(FORCE_SUB) else None
     FORCES_SUB_LINK = environ.get('FORCE_SUB_LINK')
 
     # Media Caption
-    USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
+    USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
     CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", Customize.FILE_CAPTION)
 
     # Filters Control
@@ -90,7 +90,7 @@ class Configs(object):
     WEB_API = environ.get("ADS_WEB_API")
 
     # other
-    DONATE_LINKS = environ.get("DONATION_LINK", "https://p.paytm.me/xCTH/7yzmtgie")
+    DONATE_LINKS = environ.get("DONATION_LINK", "https://p.paytm.me/")
     LOADING_SYMBOL = bool(environ.get("LOADING_MODE", True))
     LOADING_A = environ.get("LOADING_SYMBOL_A", "⚪️")
     LOADING_B = environ.get("LOADING_SYMBOL_B", "⚫️")
