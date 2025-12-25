@@ -1,17 +1,17 @@
 import os, aiohttp, re, asyncio
 from asyncio import sleep
 from pyrogram import filters, enums
-from Midukki.midukki import Midukki_RoboT
+from Provider.provider import AutoFilterBot
 from pyrogram.errors.exceptions.bad_request_400 import ChannelInvalid, ChatAdminRequired, UsernameInvalid, UsernameNotModified
 from pyrogram.errors import UserIsBlocked, MessageNotModified, PeerIdInvalid, FloodWait
-from Midukki.database import db, Media, save_file, get_file_details, get_search_results
-from Midukki.functions.commands import button, markup, message
-from Midukki.functions.handlers import AutoFilter, Admins
-from Midukki.functions.settings import get_settings, save_group_settings
-from Midukki.functions.unpack_file_id import unpack_new_file_id
-from Midukki.functions.user_details import user_mention
-from Midukki.functions.media_details import get_size
-from Midukki import Configs, Index, Bots, Customize
+from Provider.database import db, Media, save_file, get_file_details, get_search_results
+from Provider.functions.commands import button, markup, message
+from Provider.functions.handlers import AutoFilter, Admins
+from Provider.functions.settings import get_settings, save_group_settings
+from Provider.functions.unpack_file_id import unpack_new_file_id
+from Provider.functions.user_details import user_mention
+from Provider.functions.media_details import get_size
+from Provider import Configs, Index, Bots, Customize
 from logging import getLogger, ERROR
 
 logger = getLogger(__name__)
@@ -21,7 +21,7 @@ lock = asyncio.Lock()
 
 media_filter = filters.document | filters.video | filters.audio
 
-@Midukki_RoboT.on_message(filters.chat(Configs.CHANNELS) & media_filter)
+@AutoFilterBot.on_message(filters.chat(Configs.CHANNELS) & media_filter)
 async def media(client, message):
     """Media Handler"""
     for file_type in ("document", "video", "audio"):
@@ -112,8 +112,8 @@ async def index_files(client, query):
     if query.data.startswith('index_cancel'):
         Index.CANCEL = True
         return await query.answer("Cancelling Indexing")
-    _, muhammed, chat, lst_msg_id, from_user = query.data.split("#")
-    if muhammed == 'reject':
+    _, provider, chat, lst_msg_id, from_user = query.data.split("#")
+    if provider == 'reject':
         await query.message.delete()
         await client.send_message(
             int(from_user),
@@ -144,8 +144,8 @@ async def index_files(client, query):
     await index_files_to_db(int(lst_msg_id), chat, msg, client)
 
 
-@Midukki_RoboT.on_message(AutoFilter.b)
-async def save_template(client: Midukki_RoboT, message: message()):
+@AutoFilterBot.on_message(AutoFilter.b)
+async def save_template(client: AutoFilterBot, message: message()):
     sts = await message.reply_text("⏳️")
     await sleep(0.3)
     userid = message.from_user.id if message.from_user else None
@@ -173,21 +173,21 @@ async def save_template(client: Midukki_RoboT, message: message()):
     else:
         return
 
-    motechyt = await client.get_chat_member(grp_id, userid)
-    if (motechyt.status != enums.ChatMemberStatus.ADMINISTRATOR and motechyt.status != enums.ChatMemberStatus.OWNER and userid not in Configs.ADMINS_ID):
+    providerbotx = await client.get_chat_member(grp_id, userid)
+    if (providerbotx.status != enums.ChatMemberStatus.ADMINISTRATOR and motechyt.status != enums.ChatMemberStatus.OWNER and userid not in Configs.ADMINS_ID):
         await sts.delete()
         return
 
     if len(message.command) < 2:
         return await sts.edit("None")
 
-    pr0fess0r_99 = message.text.split(" ", 1)[1]
-    await save_group_settings(grp_id, 'template', pr0fess0r_99)
-    await sts.edit(f"""Successfully Changed Temp (Autofilter) for {title} to \n\n{pr0fess0r_99}""")
+    providerbhaskar = message.text.split(" ", 1)[1]
+    await save_group_settings(grp_id, 'template', providerbhaskar)
+    await sts.edit(f"""Successfully Changed Temp (Autofilter) for {title} to \n\n{providerbhaskar}""")
 
 
-@Midukki_RoboT.on_message(AutoFilter.c)
-async def reset_template(client: Midukki_RoboT, message: message()):
+@AutoFilterBot.on_message(AutoFilter.c)
+async def reset_template(client: AutoFilterBot, message: message()):
     sts = await message.reply_text("⏳️")
     await sleep(0.3)
     userid = message.from_user.id if message.from_user else None
@@ -215,8 +215,8 @@ async def reset_template(client: Midukki_RoboT, message: message()):
     else:
         return
 
-    motechyt = await client.get_chat_member(grp_id, userid)
-    if (motechyt.status != enums.ChatMemberStatus.ADMINISTRATOR and motechyt.status != enums.ChatMemberStatus.OWNER and userid not in Configs.ADMINS_ID):
+    providerbotx = await client.get_chat_member(grp_id, userid)
+    if (providerbotx.status != enums.ChatMemberStatus.ADMINISTRATOR and motechyt.status != enums.ChatMemberStatus.OWNER and userid not in Configs.ADMINS_ID):
         await sts.delete()
         return
 
@@ -224,8 +224,8 @@ async def reset_template(client: Midukki_RoboT, message: message()):
     await sts.edit(f"""Successfully Restarted Autofilter""")
 
 
-@Midukki_RoboT.on_message(AutoFilter.d)
-async def set_filecaption(client: Midukki_RoboT, message: message()):
+@AutoFilterBot.on_message(AutoFilter.d)
+async def set_filecaption(client: AutoFilterBot, message: message()):
     sts = await message.reply_text("⏳️")
     await sleep(0.3)
     userid = message.from_user.id if message.from_user else None
@@ -253,21 +253,21 @@ async def set_filecaption(client: Midukki_RoboT, message: message()):
     else:
         return
 
-    motechyt = await client.get_chat_member(grp_id, userid)
-    if (motechyt.status != enums.ChatMemberStatus.ADMINISTRATOR and motechyt.status != enums.ChatMemberStatus.OWNER and userid not in Configs.ADMINS_ID):
+    providerbotx = await client.get_chat_member(grp_id, userid)
+    if (providerbotx.status != enums.ChatMemberStatus.ADMINISTRATOR and motechyt.status != enums.ChatMemberStatus.OWNER and userid not in Configs.ADMINS_ID):
         await sts.delete()
         return
 
     if len(message.command) < 2:
         return await sts.edit("None")
 
-    pr0fess0r_99 = message.text.split(" ", 1)[1]
+    providerbhaskar = message.text.split(" ", 1)[1]
     await save_group_settings(grp_id, 'caption', pr0fess0r_99)
     await sts.edit(f"""Successfully Changed FileCaption (Autofilter) for {title} to \n\n{pr0fess0r_99}""")
 
 
-@Midukki_RoboT.on_message(AutoFilter.e)
-async def reset_caption(client: Midukki_RoboT, message: message()):
+@AutoFilterBot.on_message(AutoFilter.e)
+async def reset_caption(client: AutoFilterBot, message: message()):
     sts = await message.reply_text("⏳️")
     await sleep(0.3)
     userid = message.from_user.id if message.from_user else None
@@ -295,8 +295,8 @@ async def reset_caption(client: Midukki_RoboT, message: message()):
     else:
         return
 
-    motechyt = await client.get_chat_member(grp_id, userid)
-    if (motechyt.status != enums.ChatMemberStatus.ADMINISTRATOR and motechyt.status != enums.ChatMemberStatus.OWNER and userid not in Configs.ADMINS_ID):
+    providerbotx = await client.get_chat_member(grp_id, userid)
+    if (providerbotx.status != enums.ChatMemberStatus.ADMINISTRATOR and motechyt.status != enums.ChatMemberStatus.OWNER and userid not in Configs.ADMINS_ID):
         await sts.delete()
         return
 
@@ -304,8 +304,8 @@ async def reset_caption(client: Midukki_RoboT, message: message()):
     await sts.edit("Successfully Restarted FileCaption")
 
 
-@Midukki_RoboT.on_message(AutoFilter.f)
-async def set_spellmode(client: Midukki_RoboT, message: message()):
+@AutoFilterBot.on_message(AutoFilter.f)
+async def set_spellmode(client: AutoFilterBot, message: message()):
     sts = await message.reply_text("⏳️")
     await sleep(0.3)
     userid = message.from_user.id if message.from_user else None
@@ -333,20 +333,20 @@ async def set_spellmode(client: Midukki_RoboT, message: message()):
     else:
         return
 
-    motechyt = await client.get_chat_member(grp_id, userid)
-    if (motechyt.status != enums.ChatMemberStatus.ADMINISTRATOR and motechyt.status != enums.ChatMemberStatus.OWNER and userid not in Configs.ADMINS_ID):
+    providerbotx = await client.get_chat_member(grp_id, userid)
+    if (providerbotx.status != enums.ChatMemberStatus.ADMINISTRATOR and motechyt.status != enums.ChatMemberStatus.OWNER and userid not in Configs.ADMINS_ID):
         await sts.delete()
         return
 
     if len(message.command) < 2:
         return await sts.edit("None")
 
-    pr0fess0r_99 = message.text.split(" ", 1)[1]
+    providerbotz = message.text.split(" ", 1)[1]
     await save_group_settings(grp_id, 'spell_caption', pr0fess0r_99)
     await sts.edit(f"""Successfully Changed SpellCheck Message (Autofilter) for {title} to \n\n{pr0fess0r_99}""")
 
-@Midukki_RoboT.on_message(AutoFilter.g)
-async def reset_spellmode(client: Midukki_RoboT, message: message()):
+@AutoFilterBot.on_message(AutoFilter.g)
+async def reset_spellmode(client: AutoFilterBot, message: message()):
     sts = await message.reply_text("⏳️")
     await sleep(0.3)
     userid = message.from_user.id if message.from_user else None
