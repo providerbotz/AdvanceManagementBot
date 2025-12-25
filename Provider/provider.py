@@ -61,7 +61,7 @@ class Midukki_RoboT(Client):
 
     async def is_subscribed(self, provider, bot):
         try:
-            user = await midukki.get_chat_member(Configs.AUTH_CHANNEL, bot.from_user.id)
+            user = await provider.get_chat_member(Configs.AUTH_CHANNEL, bot.from_user.id)
         except UserNotParticipant:
             pass
         except Exception as e:
