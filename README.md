@@ -132,14 +132,3 @@ How To Deploy 👉
 </a>
 </p>
 </details>
-
-### Repo Status
-
-<h1>
-  <a href="https://github.com/providerbotz/AdvanceManagementBot"><img align="left" height="200%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=providerbotz&repo=AdvanceManagementBot&theme=onedark&hide_border=true&hide=html,css&langs_count=7" /></a>
-
-  [![AdvanceManagementBot](https://github-readme-stats.vercel.app/api/pin/?username=providerbotz&repo=AdvanceManagementBot&align="center")](https://github.com/providerbotz/AdvanceManagementBot)
-
-</h1>
-
-<img align="center" width="50%" src="https://gpvc.arturio.dev/AdvanceManagementBot" alt="Profile views" />
