@@ -37,7 +37,7 @@ Report Bugs, Give Feature Requests There..
 Do Fork And Star The Repository If You Liked It.
 
 <a href="https://telegram.dog/providerbotz"><img alt="telegram" src="https://img.shields.io/badge/Updates-%22B1B17.svg?&logo=telegram&logoColor=black"></a>
-<a href="https://youtube.com/channel/@providerbotz"><img src="https://img.shields.io/badge/Mo-Tech-FF3333.svg?logo=youtube&logoColor=FF3333"></a>
+<a href="https://youtube.com/channel/@providerbotz"><img src="https://img.shields.io/badge/Provider-Botz-FF3333.svg?logo=youtube&logoColor=FF3333"></a>
 <a href="https://telegram.dog/providerbotx"><img alt="telegram" src="https://img.shields.io/badge/Group-%22B1B17.svg?&logo=telegram&logoColor=black"></a>
 
 ### Features
@@ -77,7 +77,7 @@ Read this before you start messing up with your edits
 
 • `DATABASE_NAME` : Name of the database in [mongoDB](https://www.mongodb.com/). For more help watch this [video](https://youtu.be/mD9veNL7KoE)
 
-• `DATABASE_URL` : [mongoDB](https://www.mongodb.com/) URI. Get this value from [mongoDB](https://www.mongodb.com/). For more help watch this [video](https://youtu.be/mD9veNL7KoE)
+• `DATABASE_URL` : [mongoDB](https://www.mongodb.com/) URI. Get this value from [mongoDB](https://www.mongodb.com/). For more help watch this [video](https://youtu.be/)
 
 • `FORCE_SUB` : ID of channel. Without subscribing this channel users cannot use Autofilter
 
@@ -113,12 +113,12 @@ Read this before you start messing up with your edits
 
 
 How To Deploy 👉
-<a href="https://youtu.be/63K9xkKMBoo"><img alt="YouTube" src="https://img.shields.io/badge/Video-%22B1B17.svg?&logo=youtube&logoColor=white"></a>
+<a href="https://youtu.be/"><img alt="YouTube" src="https://img.shields.io/badge/Video-%22B1B17.svg?&logo=youtube&logoColor=black"></a>
 
 <details><summary>Deploy To Heroku</summary>
 <p>
 <br>
-<a href="https://heroku.com/deploy?template=https://github.com/PR0FESS0R-99/Midukki-RoBoT">
+<a href="https://heroku.com/deploy?template=https://github.com/providerbotz/AdvanceManagementBot">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 </p>
@@ -136,10 +136,10 @@ How To Deploy 👉
 ### Repo Status
 
 <h1>
-  <a href="https://github.com/Pr0fess0r-99/Midukki-RoBoT"><img align="left" height="200%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Pr0fess0r-99&repo=Midukki-RoBoT&theme=onedark&hide_border=true&hide=html,css&langs_count=7" /></a>
+  <a href="https://github.com/providerbotz/AdvanceManagementBot"><img align="left" height="200%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=providerbotz&repo=AdvanceManagementBot&theme=onedark&hide_border=true&hide=html,css&langs_count=7" /></a>
 
-  [![Midukki-RoBoT](https://github-readme-stats.vercel.app/api/pin/?username=PR0FESS0R-99&repo=Midukki-RoBoT&align="center")](https://github.com/PR0FESS0R-99/Midukki-RoBoT)
+  [![AdvanceManagementBot](https://github-readme-stats.vercel.app/api/pin/?username=providerbotz&repo=AdvanceManagementBot&align="center")](https://github.com/providerbotz/AdvanceManagementBot)
 
 </h1>
 
-<img align="center" width="50%" src="https://gpvc.arturio.dev/Midukki-RoboT" alt="Profile views" />
+<img align="center" width="50%" src="https://gpvc.arturio.dev/AdvanceManagementBot" alt="Profile views" />
