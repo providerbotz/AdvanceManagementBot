@@ -85,7 +85,7 @@ Read this before you start messing up with your edits
 
 • `LOG_CHANNEL` : A channel to log the activities of bot. Make sure bot is an admin in the channel
 
-• `REPO_USERNAME` : Enter Repository name `Midukki-RoBoT`
+• `REPO_USERNAME` : Enter Repository name `AdvanceManagementBot`
 
 ##### Must Use Optional Variables
 
