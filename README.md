@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-<a href="https://telegram.dog/providerbotz">ProviderBotz</a>
+<a href="https://telegram.dog/providerbotz">ᴘʀᴏᴠɪᴅᴇʀʙᴏᴛᴢ</a>
 </h1>
 
 <p align="center">
