@@ -1,6 +1,6 @@
 from pyrogram import filters
 from .commands import command
-from Provider.provider import AutoFilterBot
+from Provider.provider import AdvanceManagementBot
 from Provider.functions.cust_p_filters import admin_fliter
 from Provider import Configs
 
