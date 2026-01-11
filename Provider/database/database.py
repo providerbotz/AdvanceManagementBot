@@ -7,8 +7,8 @@ from logging import getLogger, ERROR
 from pymongo.errors import DuplicateKeyError
 from marshmallow.exceptions import ValidationError
 from motor.motor_asyncio import AsyncIOMotorClient
-from Midukki import Configs, Customize
-from Midukki.functions.unpack_file_id import unpack_new_file_id
+from Provider import Configs, Customize
+from Provider.functions.unpack_file_id import unpack_new_file_id
 from umongo import Instance, Document, fields
 
 logger = getLogger(__name__)
