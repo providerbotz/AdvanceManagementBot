@@ -14,7 +14,7 @@ from .connections import connections_callback_1, connections_callback_2, connect
 from .manual_filters import alert_cb, del_all_cancel, del_all_confirm
 from .settings_configs import setting_cb
 
-@AdvanceManagementBot.on_callback_query(filters.regex("(close_data|groupcb|connectcb|disconnect|deletecb|backcb|index|get_file|nextgroup|backgroup|delallcancel|delallconfirm|alertmessage|settings)"))
+@AutoFilterBot.on_callback_query(filters.regex("(close_data|groupcb|connectcb|disconnect|deletecb|backcb|index|get_file|nextgroup|backgroup|delallcancel|delallconfirm|alertmessage|settings)"))
 async def cb_handler(client, query):
 
     try: user_id = query.reply_to_message.from_user.id if query.reply_to_message.from_user else None
