@@ -1,15 +1,15 @@
 from logging import getLogger, ERROR
 from pyrogram import enums
-from Midukki.midukki import Midukki_RoboT
-from Midukki.functions.handlers import Connection
-from Midukki.functions.commands import button, markup, message
-from Midukki.database import db
-from Midukki import Configs
+from Provider.rovider import Midukki_RoboT
+from Provider.functions.handlers import Connection
+from Provider.functions.commands import button, markup, message
+from Provider.database import db
+from Provider import Configs
 
 logger = getLogger(__name__)
 logger.setLevel(ERROR)
 
-@Midukki_RoboT.on_message(Connection.a)
+@AdvanceManagementBot.on_message(Connection.a)
 async def add_new_connection(client: Midukki_RoboT, message: message()):
 
     userid = message.from_user.id if message.from_user else None
@@ -23,7 +23,7 @@ async def add_new_connection(client: Midukki_RoboT, message: message()):
         except:
             await message.reply_text(
                 "<b>Enter in correct format!</b>\n\n"
-                "<code>/connect groupid</code>\n\n"
+                "<code>/connect -groupid</code>\n\n"
                 "<i>Get your Group id by adding this bot to your group and use  <code>/id</code></i>",
                 quote=True
             )
@@ -80,8 +80,8 @@ async def add_new_connection(client: Midukki_RoboT, message: message()):
         await message.reply_text('Some error occurred! Try again later.', quote=True)
         return
 
-@Midukki_RoboT.on_message(Connection.b)
-async def delete_old_connection(client, Midukki_RoboT, message: message()):
+@AdvanceManagementBot.on_message(Connection.b)
+async def delete_old_connection(client, AdvanceManagementBot, message: message()):
 
     userid = message.from_user.id if message.from_user else None
     if not userid:
@@ -108,7 +108,7 @@ async def delete_old_connection(client, Midukki_RoboT, message: message()):
         else:
             await message.reply_text("This chat isn't connected to me!\nDo /connect to connect.", quote=True)
 
-@Midukki_RoboT.on_message(Connection.c)
+@AdvanceManagementBot.on_message(Connection.c)
 async def all_connections_command(client: Midukki_RoboT, message: message()):
     userid = message.from_user.id
 
