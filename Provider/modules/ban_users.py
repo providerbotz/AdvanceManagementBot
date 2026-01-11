@@ -14,20 +14,20 @@ async def ban_user(_, message):
     else:
         if str(user_id).lower().startswith("@"):
             await message.reply_text(
-                "വേറെ ഒരാളും പൊടി പാറിപ്പിക്കുന്നു..! "
+                ""someone else is creating trouble..! "
                 f"{user_first_name}"
-                " നെ വിലക്കിയിരിക്കുന്നു."
+                " has been banned."
             )
         else:
             await message.reply_text(
-                "വേറെ ഒരാളും പൊടി പാറിപ്പിക്കുന്നു..! "
+                "someone else is creating trouble..! "
                 f"<a href='tg://user?id={user_id}'>"
                 f"{user_first_name}"
                 "</a>"
-                " നെ വിലക്കിയിരിക്കുന്നു."
+                " has been banned."
             )
 
-@Midukki_RoboT.on_message(Ban.b)
+@AdvanceManagementBot.on_message(Ban.b)
 async def un_ban_user(_, message):
     user_id, user_first_name, _ = extract_user(message)
 
@@ -38,20 +38,20 @@ async def un_ban_user(_, message):
     else:
         if str(user_id).lower().startswith("@"):
             await message.reply_text(
-                "ശരി, മാറ്റിയിട്ടുണ്ട്... ഇനി "
-                f"{user_first_name} ക്ക് "
-                " ഗ്രൂപ്പിൽ ചേരാൻ കഴിയും!"
+                "okay, changed... now "
+                f"{user_first_name} "
+                "can join the group!"
             )
         else:
             await message.reply_text(
-                "ശരി, മാറ്റിയിട്ടുണ്ട്... ഇനി "
+                "okay, changed... now "
                 f"<a href='tg://user?id={user_id}'>"
                 f"{user_first_name}"
-                "</a> ക്ക് "
-                " ഗ്രൂപ്പിൽ ചേരാൻ കഴിയും!"
+                "</a> "
+                "can join the group!"
             )
 
-@Midukki_RoboT.on_message(Ban.c)
+@AdvanceManagementBot.on_message(Ban.c)
 async def temp_ban_user(_, message):
     if not len(message.command) > 1:
         return
@@ -62,8 +62,8 @@ async def temp_ban_user(_, message):
     if until_date_val is None:
         await message.reply_text(
             (
-                "അസാധുവായ സമയ തരം വ്യക്തമാക്കി. "
-                "പ്രതീക്ഷിച്ചതു m, h, or d, കിട്ടിയത്: {}"
+                "invalid time type specified. "
+                "expected m, h, or d, got: {}"
             ).format(message.command[1][-1])
         )
         return
@@ -75,15 +75,15 @@ async def temp_ban_user(_, message):
     else:
         if str(user_id).lower().startswith("@"):
             await message.reply_text(
-                "വേറെ ഒരാളും പൊടി പാറിപ്പിക്കുന്നു..! "
+                "someone else is creating trouble..! "
                 f"{user_first_name}"
                 f" banned for {message.command[1]}!"
             )
         else:
             await message.reply_text(
-                "വേറെ ഒരാളും പൊടി പാറിപ്പിക്കുന്നു..! "
+                "someone else is creating trouble..! "
                 f"<a href='tg://user?id={user_id}'>"
-                "ലവനെ"
+                f"{user_first_name}"
                 "</a>"
                 f" banned for {message.command[1]}!"
             )
