@@ -1,5 +1,5 @@
 {
-    "name": "AutoFilterBot",
+    "name": "AdvanceManagementBot",
     "description": "AutoFilterBot is an all in one group management bot made for managing your group effectively with some advance security tools & Suit For All Your Needs ❤️",
     "keywords": [
       "telegram",
@@ -11,8 +11,8 @@
       "tech"
     ],
     "stack": "container",
-    "website": "https//telegram.dog/Midukki_RoBoT",
-    "repository": "https://github.com/PR0FESS0R-99/Midukki-RoBoT",
+    "website": "https//telegram.dog/",
+    "repository": "https://github.com/",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
@@ -40,12 +40,12 @@
             "required": false
         },
         "DATABASE_NAME": {
-            "description": "Name of the database in https://www.mongodb.com/. For more help watch this https://youtu.be/mD9veNL7KoE",
+            "description": "Name of the database in https://www.mongodb.com/. For more help watch this https://youtu.be/",
             "value": "",
             "required": false
         },
         "DATABASE_URL": {
-            "description": "Name of the database in https://www.mongodb.com/. For more help watch this https://youtu.be/mD9veNL7KoE",
+            "description": "Name of the database in https://www.mongodb.com/. For more help watch this https://youtu.be/",
             "value": "",
             "required": true
         },
@@ -55,8 +55,8 @@
             "required": false
         },
         "GITHUB_USERNAME": {
-            "description": "Enter Your Github Username Pr0fess0r-99",
-            "value": "Pr0fess0r-99",
+            "description": "Enter Your Github Username providerbotz",
+            "value": "providerbotz",
             "required": true
         },
         "LOG_CHANNEL": {
@@ -65,8 +65,8 @@
             "required": true
         },
         "REPO_USERNAME": {
-            "description": "Enter Repository name Midukki-RoBoT",
-            "value": "Midukki-RoBoT",
+            "description": "Enter Repository name AdvanceManagementBot",
+            "value": "AdvanceManagementBot",
             "required": false
         },
         "API_WEB_URL": {
@@ -81,7 +81,7 @@
         },
         "DONATION_LINK": {
             "description": "enter your gpay, pypal etc.. link",
-            "value": "",
+            "value": "https://paypal.com/",
             "required": false
         },
         "AUTH_USERS": {
@@ -131,7 +131,7 @@
         },
         "SUPPORT_CHAT": {
             "description": "Your Support chat url or Your Link [with https:// or https://t.me/] Don't use @",
-            "value": "https://t.me/Mo_Tech_YT",
+            "value": "https://t.me/",
             "required": false
         }
     },
