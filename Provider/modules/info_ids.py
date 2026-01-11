@@ -2,17 +2,17 @@ import os, time, logging
 from pyrogram import enums
 from pyrogram.errors import UserNotParticipant
 from datetime import datetime
-from Midukki.midukki import Midukki_RoboT 
-from Midukki.functions.handlers import Info_Id
-from Midukki.functions.extract_user import extract_user
-from Midukki.functions.last_online import last_online
-from Midukki.functions.media_details import get_file_id
-from Midukki.functions.commands import button, markup
+from Provider.provider import Midukki_RoboT 
+from Provider.functions.handlers import Info_Id
+from Provider.functions.extract_user import extract_user
+from Provider.functions.last_online import last_online
+from Provider.functions.media_details import get_file_id
+from Provider.functions.commands import button, markup
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
 
-@Midukki_RoboT.on_message(Info_Id.a)
+@AdvanceManagementBot.on_message(Info_Id.a)
 async def showid(client, message):
     chat_type = message.chat.type
     if chat_type == enums.ChatType.PRIVATE:
@@ -56,7 +56,7 @@ async def showid(client, message):
             quote=True
         )
 
-@Midukki_RoboT.on_message(Info_Id.b)
+@AdvanceManagementBot.on_message(Info_Id.b)
 async def who_is(client, message):
     # https://github.com/SpEcHiDe/PyroGramBot/blob/master/pyrobot/plugins/admemes/whois.py#L19
     status_message = await message.reply_text(
