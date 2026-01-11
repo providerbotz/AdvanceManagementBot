@@ -5,7 +5,7 @@ from logging import ERROR, getLogger
 from pyrogram import filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pyrogram.errors import MediaEmpty, MessageEmpty
-from Provider.provider import Midukki_RoboT
+from Provider.provider import AdvanceManagementBot
 from Provider.functions.handlers import Manual
 from Provider.functions.keyboards import parser, split_quotes
 from Provider.functions.media_details import get_file_id
