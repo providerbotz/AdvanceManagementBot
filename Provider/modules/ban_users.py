@@ -14,13 +14,13 @@ async def ban_user(_, message):
     else:
         if str(user_id).lower().startswith("@"):
             await message.reply_text(
-                ""someone else is creating trouble..! "
+                ""Someone else is creating trouble..! "
                 f"{user_first_name}"
                 " has been banned."
             )
         else:
             await message.reply_text(
-                "someone else is creating trouble..! "
+                "Someone else is creating trouble..! "
                 f"<a href='tg://user?id={user_id}'>"
                 f"{user_first_name}"
                 "</a>"
@@ -75,13 +75,13 @@ async def temp_ban_user(_, message):
     else:
         if str(user_id).lower().startswith("@"):
             await message.reply_text(
-                "someone else is creating trouble..! "
+                "Someone else is creating trouble..! "
                 f"{user_first_name}"
                 f" banned for {message.command[1]}!"
             )
         else:
             await message.reply_text(
-                "someone else is creating trouble..! "
+                "Someone else is creating trouble..! "
                 f"<a href='tg://user?id={user_id}'>"
                 f"{user_first_name}"
                 "</a>"
