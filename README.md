@@ -19,16 +19,6 @@ The Telegram Bot to manage and protect groups
 
 AdvanceManagementBot simplifies the management auto filter, administration,autofilter and security of your group
 
-### Credits
-
-- Thanks to 
-- Thanks To 
-
-- Thanks To 
-- Thanks To 
-- Thanks To
-
-
 ### Support
 
 Join Our [Telegram Group](https://t.me/providerbotx) For Support/Assistance And Our [Channel](https://telegram.dog/prividerbotz) For Updates.
